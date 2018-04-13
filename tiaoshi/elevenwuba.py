@@ -31,7 +31,7 @@ class ele58(denglu):
         else:
             print('验证码接口翻车！！！')
 
-        data_login = {'channelCode': '40401',
+        data_login = {'channelCode': '40409',
                       'pwd': 'a1234567',
                       'mobilePhone': self.phone,
                       'code': '888888'}
@@ -56,7 +56,7 @@ class ele58(denglu):
 
 
 if __name__ == '__main__':
-    phone = '17302139300'
+    phone = '17302139307'
     Login = ele58(phone)
     Login.test_login()
 
