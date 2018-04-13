@@ -26,16 +26,18 @@ class ele58(denglu):
         session = requests.session()
         response_code = session.request(method='post', params={'mobilePhone': self.phone}, url=self.yuming + path_code)
         if response_code.status_code == 200:
+            print('获取验证码接口:', end=' ')
             pprint(response_code.json())
         else:
-            print('fanche')
+            print('验证码接口翻车！！！')
 
-        data_login = {'channelCode': '40404',
+        data_login = {'channelCode': '40401',
                       'pwd': 'a1234567',
                       'mobilePhone': self.phone,
                       'code': '888888'}
         response_login = session.request(method='get',url=self.yuming + path_login, params=data_login)
         if response_login.status_code == 200:
+            print('注册接口返回json：', end=' ')
             pprint(response_login.json())
             with UseDataBase(config=self.db_config) as cursor:
                 _SQL = "select user_id, user_name, pwd, mobile_phone, channel_type from rd_user where mobile_phone = %s" % self.phone
