@@ -56,7 +56,7 @@ class ele58(denglu):
 
 
 if __name__ == '__main__':
-    phone = '17302139307'
+    phone = '17302139300'
     Login = ele58(phone)
     Login.test_login()
 
